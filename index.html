@@ -1,0 +1,166 @@
+<html>
+	
+	
+	<head>
+	
+		<title>Tweeter</title>
+		
+
+		<!-- jquery -->
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+
+		<!-- tweeter client required files -->
+		<script type="text/javascript" src="tweeter-client/jscroll-master/jquery.jscroll.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="tweeter-client/tweeter.css"/>
+		<script>
+			var tweeter_server = 'http://localhost/krisrandall.github.io/tweeter/tweeter-server';
+			var hash_tag = '#DevTestingMalenyMusic';
+			
+			$(document).ready(function() {
+								
+				$('.chat_feed_area a').attr('href', tweeter_server+'/fetch_tweets.php');
+				
+				$('.jscroll').jscroll();
+				
+				$('.chat_input_area button').on('click', function() {
+					var url=tweeter_server+'/post_tweet.php?tweet='+encodeURIComponent($('.chat_input_area textarea').val()+' '+hash_tag);
+					$.ajax(url);
+				});
+				
+			});
+			
+			
+			// TO DO :
+			// POST
+			// CHECK FOR UPDATES EVERY X SECONDS
+			
+		</script>
+		
+		
+		
+		
+		<style>
+			
+			body {
+				background-color: red;
+			}
+			
+			h1 {
+				font-family: 'Comic Sans MS', cursive;
+				line-height: 1em;
+				color: yellow;
+				font-weight:bold;
+				font-size: 5em;
+				text-shadow: 0.1em  0.1em 0.2em black,
+							-0.1em  0.1em 0.2em black,
+							 0.1em -0.1em 0.2em black,
+							-0.1em -0.1em 0.2em black;
+				padding: 0.2em;
+			}
+			
+			.tagline {
+				color: white;
+				font-family: 'Comic Sans MS', cursive;
+				font-size: 1.2em;
+				
+			}
+			
+			/** this messes up jscroll ... which is a bummer because it looks so good! **
+			@media (min-width: 1000px) {
+				body {
+					-moz-column-count: 2;
+					-moz-column-gap: 20px;
+					-webkit-column-count: 2;
+					-webkit-column-gap: 20px;
+					column-count: 2;
+					column-gap: 20px;
+				}
+				.col {
+					height: 100%;
+				}
+				
+			}
+			**/
+			
+			.tweeter {
+				max-height: 100%;
+			}
+			.chat_feed_area {
+				max-height: 50%;
+				background-color: white;
+			}
+			
+		</style>	
+	</head>
+	
+	
+	<body>
+	
+
+		<div class="col">
+			<h1>Tweeter</h1>
+			
+			<p class="tagline">
+				Tweeter is an easy to use software component for
+				having a chat feed in your mobile App; it is 
+				powered by twitter.
+			</p>
+			<p class="tagline">
+				You must setup a twitter account (which the app uses to 
+				post tweets), and choose a hashtag (and all tweets with
+				that hashtag will appear in the chat).
+			</p>
+		
+		</div>
+		
+		
+		<div class="col">
+			How to use it:
+			<ol>
+				<li>
+					<a href="https://github.com/krisrandall/">
+						Download tweeter from github
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/?utm_source=gazebo&utm_medium=button&utm_term=bottom&utm_content=signupnow&utm_campaign=story-of-a-tweet&ref_src=twsrc%3Agazebo%7Ctwcamp%3Astory-of-a-tweet%7Ctwgr%3Abutton%7Ctwterm%3Abottom%7Ctwcon%3Asignupnow">
+						Sign up for a twitter account
+					</a>
+				</li>
+				<li>
+					I'm giving up on this project at this point, Twitter will not let me create an account ...<br/>
+					Will message their support, but this feature is going to need to be left out of my current app sadly. :(
+				</li>
+			</ol>
+			<br/>
+		</div>
+		
+		<div class="col tweeter">
+			
+			
+			<div class="chat_input_area">
+
+				<textarea maxlength="90" placeholder="Enter your message here..."></textarea> 
+				<!-- NOT THIS VERSION! : <input type="checkbox"/><img src="tweeter-client/geoloc.png" style="width: 1em; height: 1em;"/> -->
+				<button type="button">Post</button>
+
+			</div>
+			<div class="chat_feed_area">
+				<div class="jscroll">
+					<a href="#">Fetching chat...</a>
+				</div>
+			</div>
+			
+			
+		</div>
+				
+				
+				
+
+
+		
+	</body>
+	
+</html>

@@ -1,0 +1,120 @@
+
+
+.chat_feed_area {
+	overflow: scroll;
+}
+
+
+
+.tweet{
+	position: relative; 
+	margin: 6px; 
+	padding: 8px;
+
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+
+	background: #cccccc;
+	
+	font-size: 1em;
+}
+
+.tweeter {
+	border: thin solid black;
+	background-color: #ccc;
+}
+
+
+.chat_input_area textarea {
+	width: 70%;	
+	margin: 0.6em;
+	margin-bottom: 0;
+	line-height: 1em;
+	font-size: 1em;
+}
+
+.chat_input_area button {
+	width: 20%;
+	height: 3em;
+	position: relative;
+	top: -1.2em;
+	margin: 0.6em;
+	margin-bottom: 0;
+}
+
+
+
+
+/**
+ * 	
+ * Tweeter has 16 different possible colours for the tweet boxes,
+ * These are calculated as a has from the twitter users name so
+ * that they stay consistent for a given user.
+ * They can also be specified by including #c:X in the tweet text,
+ * where the X is a number from 1 to 9 or a letter from a to f.
+ * The CSS below defines the colours of the tweeter boxes:
+ */
+
+.c1 {
+	/**Give the background a gradient**/
+	background: #c49bc4; /*required for browsers that don't support gradients*/
+	background: -webkit-linear-gradient(#7e527f, #c49bc4);
+	background: -moz-linear-gradient(#7e527f, #c49bc4);
+	background: -o-linear-gradient(#7e527f, #c49bc4);
+	background: linear-gradient(#7e527f, #c49bc4);
+}
+.c2 {
+	background: #00FF00;
+	background: -webkit-linear-gradient(#008200, #00FF00);
+	background: -moz-linear-gradient(#008200, #00FF00);
+	background: -o-linear-gradient(#008200, #00FF00);
+	background: linear-gradient(#008200, #00FF00);	
+}
+.c3 {
+	background: #eea150;
+}
+.c4 {
+	background: #f853ba;
+}
+.c5 {
+	background: #0066CC;
+	background: -webkit-linear-gradient(#0000FF #0066CC);
+	background: -moz-linear-gradient(#0000FF, #0066CC);
+	background: -o-linear-gradient(#0000FF, #0066CC);
+	background: linear-gradient(#0000FF, #0066CC);		
+}
+.c6 {
+	background: #2A00FF;
+}
+.c7 {
+	background: #990000;
+}
+.c8 {
+	background: #FCB040;
+}
+.c9 {
+	background: #FF8000;
+	background: -webkit-linear-gradient(#FFE862 #FF8000);
+	background: -moz-linear-gradient(#FFE862, #FF8000);
+	background: -o-linear-gradient(#FFE862, #FF8000);
+	background: linear-gradient(#FFE862, #FF8000);
+}
+.ca {
+	background: #7E527F;
+}
+.cb {
+	background: #D01D33;
+}
+.cc {
+	background: #5E740B;
+}
+.cd {
+	background: #7F007F;
+}
+.ce {
+	background: #FFC074;
+}
+.cf {
+	background: #C3DEFE;
+}
