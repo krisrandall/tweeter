@@ -18,7 +18,7 @@ $count = intval('5'); // number of tweets to return -- NB: don't display the las
 /** Perform a GET request and echo the response **/
 /** Note: Set the GET field BEFORE calling buildOauth(); **/
 $url = 'https://api.twitter.com/1.1/search/tweets.json';
-$getfield = mysql_real_escape_string("?q=$q&max_id=$max_id&result_type=$result_type&count=$count");
+$getfield = ("?q=$q&max_id=$max_id&result_type=$result_type&count=$count");
 $requestMethod = 'GET';
 $twitter = new TwitterAPIExchange($settings);
 $t_res =  $twitter->setGetfield($getfield)
